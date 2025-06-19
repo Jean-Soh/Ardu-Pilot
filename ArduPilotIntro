@@ -1,0 +1,18 @@
+---
+title: Intro
+layout: home
+---
+
+This is a quick start to ardu rover for a drone boat using [ardurover](https://ardupilot.org/rover/index.html).
+
+The first step is choosing an AutoPilot borad. We will be using the [MATEKSYS H743-WLITE](https://www.mateksys.com/?portfolio=h743-wlite), along side [Mission Planner](https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi), which is a ground control station (GCS). The GCS displays real-time data on the UAVs performance and position. A GCS can also be used to control a UAV, uploading new mission commands and setting parameters. It is often also used to monitor the live video streams from a UAV’s cameras.
+
+Next we need to hook up our RC reciver to the flight controller. Typically a reciver has 4 outputs. A RX & TX pin as well as a Ground and Power pin. Be sure to connect the power to the 4v5 pin so that it will be powered even when connected via USB. RX & TX should be connected to RX6 & TX6 *serial 7*.
+
+If you're using a new controller/recive you need to update the firmware here is a guide to ExpressLRS [Pairing guide](https://www.youtube.com/watch?v=J3Hg2f7RL1A&t=1466s). Next we need to set certain parameters in mission planer. Set *RC_PROTOCOLS* to your controller's protocol, allowing you to narrow the protocol detection to only specific types of RC receivers which can avoid issues. In order to check if it is wire properly we can use Mission planner. Ensure *SERIAL7_PROTOCOL* is set to “23” in mission planner. Under setup > Manditory Hardware > Radio calibration you should see all the various channels on your contorller.
+
+The vaious joysticks and switches are mapped to channels which can be configured on your controller. These channels can then be mapped to various functions of the drone. For this simple drone boat we will only be using 3 channels, throttle, streeing, arming. You can configure which channels contorl which function.
+
+Place the flight controller into the drone facing the correct orientation. If you require an alternative orientation you can configure it in mission planner under [Board Orientation](https://ardupilot.org/rover/docs/common-mounting-the-flight-controller.html). This should have coved the basics of what you have to do before you start building your drone.
+
+----

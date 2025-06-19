@@ -1,35 +1,15 @@
 ---
-title: Home
+title: Intro
 layout: home
+nav_order: 0
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+This is a quick start to ardurover for a drone boat using [ardurover](https://ardupilot.org/rover/index.html).
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+The first step is choosing an AutoPilot borad, this will be the brains of your drone. We will be looking at the [MATEKSYS H743-WLITE](https://www.mateksys.com/?portfolio=h743-wlite) as well as the [Pixhawk 6X](https://ardupilot.org/plane/docs/common-holybro-pixhawk6X.html). You will also need [Mission Planner](https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi), which is a ground control station (GCS). Although if you plan on strictly using RC control it will not be needed but highly recommended. It displays real-time data on the UAVs performance and position. A GCS can also be used to control a UAV, uploading new mission commands and setting parameters. It is often also used to monitor the live video streams from a UAV’s cameras.
 
-More specifically, the created site:
+When you first open up mission planner, you should be on the data tab. The top right is the connect button, always remeber to set the COM port to AUTO if this is your first time connecting or if you've changed the mode of connection. Navigate to the config > full perameter list. The first thing to do is to change the FRAME_TYPE = 2(Boat). You will be doing most of the configuration in this tabs.
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+Place the flight controller into the drone facing the correct orientation. If you require an alternative orientation you can configure it in mission planner under [Board Orientation](https://ardupilot.org/rover/docs/common-mounting-the-flight-controller.html)
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, simply:
-
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
-
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+---
